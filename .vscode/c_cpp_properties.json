@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "STM32F1",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_HAL_DRIVER",
+                "STM32F103xB"
+            ],
+            "compilerPath": "E:\\MinGW\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-clang-arm"
+        }
+    ],
+    "version": 4
+}
