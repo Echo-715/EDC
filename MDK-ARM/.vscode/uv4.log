@@ -1,4 +1,8 @@
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil_V\ARM\ARMCC\Bin'
 Build target 'Expansion_Board'
+compiling Grayscale_Sensor.c...
+linking...
+Program Size: Code=5926 RO-data=266 RW-data=16 ZI-data=1928  
+FromELF: creating hex file...
 "Expansion_Board\Expansion_Board.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01

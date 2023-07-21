@@ -27,12 +27,6 @@ typedef enum
 
 } _StatusTypeDef;
 
-typedef struct
-{
-
-
-
-} GrayscaleSensor_HandleTypeDef;
 
 /* Ä¬ÈÏµØÖ· */
 #define GRAY_ADDR_DEF 0x4C
