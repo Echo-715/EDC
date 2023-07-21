@@ -1,8 +1,13 @@
 --cpu Cortex-M0
 "expansion_board\startup_stm32f030x6.o"
 "expansion_board\main.o"
+"expansion_board\gpio.o"
+"expansion_board\i2c.o"
+"expansion_board\tim.o"
+"expansion_board\usart.o"
 "expansion_board\stm32f0xx_it.o"
 "expansion_board\stm32f0xx_hal_msp.o"
+"expansion_board\system_stm32f0xx.o"
 "expansion_board\stm32f0xx_hal_i2c.o"
 "expansion_board\stm32f0xx_hal_i2c_ex.o"
 "expansion_board\stm32f0xx_hal_rcc.o"
@@ -20,7 +25,6 @@
 "expansion_board\stm32f0xx_hal_tim_ex.o"
 "expansion_board\stm32f0xx_hal_uart.o"
 "expansion_board\stm32f0xx_hal_uart_ex.o"
-"expansion_board\system_stm32f0xx.o"
 --strict --scatter "Expansion_Board\Expansion_Board.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
