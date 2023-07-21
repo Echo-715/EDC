@@ -111,7 +111,8 @@ int main(void)
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
   /*TIM3*/
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
-  
+
+  /*开机提示*/
 	Boot_Prompt();
 
   /* USER CODE END 2 */
@@ -125,7 +126,7 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-    /*开机提示*/
+
   
 
 	  /*OLED初始化*/
