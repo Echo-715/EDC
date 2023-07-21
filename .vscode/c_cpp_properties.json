@@ -10,7 +10,10 @@
                 "D:\\Keil_V\\ARM\\ARMCC\\include",
                 "D:\\Keil_V\\ARM\\ARMCC\\include\\rw",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\MDK-ARM",
-                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\Core\\Src"
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\Core\\Src",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\ZEML\\Drivers\\Include",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\ZEML\\Drivers\\BSP\\Peripheral\\Grayscale_Sensor\\Inc",
+                
             ],
             "defines": [
                 "USE_HAL_DRIVER",
