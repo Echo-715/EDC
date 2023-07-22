@@ -13,7 +13,7 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\Core\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\ZEML\\Drivers\\Include",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\ZEML\\Drivers\\BSP\\Peripheral\\Grayscale_Sensor\\Inc",
-                
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Expansion_Board\\ZEML\\Include"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

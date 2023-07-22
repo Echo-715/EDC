@@ -2,6 +2,8 @@
     "files.associations": {
         "main.h": "c",
         "stm32f0xx_hal.h": "c",
-        "stm32f0xx_hal_conf.h": "c"
+        "stm32f0xx_hal_conf.h": "c",
+        "zeml_def.h": "c",
+        "grayscale_sensor.h": "c"
     }
 }
