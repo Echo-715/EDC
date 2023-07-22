@@ -32,3 +32,4 @@ expansion_board\grayscale_sensor.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0x
 expansion_board\grayscale_sensor.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 expansion_board\grayscale_sensor.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
 expansion_board\grayscale_sensor.o: ..\ZEML\Drivers\BSP\Peripheral\Grayscale_Sensor\Inc\Grayscale_Sensor.h
+expansion_board\grayscale_sensor.o: ..\ZEML\Include\ZEML_def.h

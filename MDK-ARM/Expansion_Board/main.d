@@ -36,3 +36,5 @@ expansion_board\main.o: ../Core/Inc/i2c.h
 expansion_board\main.o: ../Core/Inc/tim.h
 expansion_board\main.o: ../Core/Inc/usart.h
 expansion_board\main.o: ../Core/Inc/gpio.h
+expansion_board\main.o: ..\ZEML\Drivers\BSP\Peripheral\Grayscale_Sensor\Inc\Grayscale_Sensor.h
+expansion_board\main.o: ..\ZEML\Include\ZEML_def.h
