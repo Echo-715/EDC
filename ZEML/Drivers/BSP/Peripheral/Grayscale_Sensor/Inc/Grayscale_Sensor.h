@@ -15,17 +15,10 @@
 /* includes --------------------------------------------------------------------------*/
 #include <stdint.h>
 /* Private includes 非官方头文件声明----------------------------------------------------------*/
+#include "ZEML_def.h"
 /* Exported types 类型定义------------------------------------------------------------*/
 /* Exported constants 常量定义--------------------------------------------------------*/
 /* Exported macro 宏定义------------------------------------------------------------*/
-typedef enum 
-{
-  _OK       = 0x00U,
-  _ERROR    = 0x01U,
-  _BUSY     = 0x02U,
-  _TIMEOUT  = 0x03U
-
-} _StatusTypeDef;
 
 
 /* 默认地址 */
@@ -49,7 +42,7 @@ typedef enum
 
 /* 开启连续读取模拟数据模式 */
 #define GRAY_ANALOG_BASE 0xB0
-#define GRAY_ANALOG_MODE  (_GRAY_ANALOG_BASE_ + 0)
+#define GRAY_ANALOG_MODE  (GRAY_ANALOG_BASE + 0)
 
 /* 传感器归一化寄存器(v3.6及之后的固件) */
 #define GRAY_ANALOG_NORMALIZE 0xCF
@@ -92,6 +85,25 @@ typedef enum
 #define GRAY_ANALOG_CH_EN_8 (0x1 << 7)
 #define GRAY_ANALOG_CH_EN_ALL (0xFF)
 
+/**
+ * @brief 灰度传感器结构体
+*/
+typedef struct 
+{
+  HAL_StatusTypeDef GarySta; /*传感器状态*/
+
+  uint8_t OC[8];   /*每个探头的数据*/
+
+  uint8_t addr_tab[128];   /*初始化扫描设备地址*/
+  
+  uint8_t receive_8bit;   /*8探头的字节数据*/
+
+  uint8_t Ping_addr;    /*ping检测返回地址*/
+
+  uint8_t cmd; /*用户自定义命令*/
+
+}Gary_HandleTypeDef;
+
 /* Exported functions prototypes 函数声明---------------------------------------------*/
 /**
  * @brief 从I2C得到的8位的数字信号的数据 读取第n位的数据
@@ -116,6 +128,15 @@ val6 = GET_NTH_BIT(sensor_value, 6);                                            
 val7 = GET_NTH_BIT(sensor_value, 7);                                              \
 val8 = GET_NTH_BIT(sensor_value, 8);                                              \
 } while(0)
+
+
+uint8_t Gray_Init (Gary_HandleTypeDef *GaryX); /*传感器初始化*/
+
+_StatusTypeDef PING_check (Gary_HandleTypeDef *GaryX);/*ping检测函数*/
+
+void Gary_Read_8bit (Gary_HandleTypeDef *GaryX);/*数据读取模式*/
+
+void Gary_Read_8OC (Gary_HandleTypeDef *GaryX);/*连续读取8探头数据*/
 
 
 #endif /* INC_GW_GRAYSCALE_SENSOR_H_ */
