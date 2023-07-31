@@ -41,7 +41,7 @@ extern CAN_RxHeaderTypeDef RxMessage;
 void MX_CAN_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void Message_buffer(CAN_RxHeaderTypeDef* RxMessage, uint8_t RxData[8],uint8_t buf[][8]);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

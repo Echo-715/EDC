@@ -15,6 +15,7 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\OLED\\Inc",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Inc",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Inc",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Motor\\Inc",
                 "D:\\Keil_V\\ARM\\ARMCC\\include",
                 "D:\\Keil_V\\ARM\\ARMCC\\include\\rw",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\MDK-ARM",
@@ -25,7 +26,8 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Application\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\OLED\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Src",
-                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Src"
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Src",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Motor\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

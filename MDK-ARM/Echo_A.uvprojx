@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Application/Inc;../Middlewares/Peripheral/OLED/Inc;../Middlewares/Peripheral/Buzzer/Inc;../Middlewares/Comm/Inc</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Application/Inc;../Middlewares/Peripheral/OLED/Inc;../Middlewares/Peripheral/Buzzer/Inc;../Middlewares/Comm/Inc;..\Middlewares\Peripheral\Motor\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2270,6 +2270,11 @@
               <FileName>IMU.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Comm\Src\IMU.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Peripheral\Motor\Src\Motor.c</FilePath>
             </File>
           </Files>
         </Group>
