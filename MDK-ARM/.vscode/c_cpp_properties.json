@@ -24,7 +24,8 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\MemMang",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Application\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\OLED\\Src",
-                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Src"
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Src",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

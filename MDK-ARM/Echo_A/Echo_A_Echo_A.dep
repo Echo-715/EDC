@@ -1,7 +1,7 @@
 Dependencies for Project 'Echo_A', Target 'Echo_A': (DO NOT MODIFY !)
 CompilerVersion: 5060528::V5.06 update 5 (build 528)::.\ARMCC
 F (startup_stm32f103xb.s)(0x64C5BE2B)(--cpu Cortex-M3 -g --apcs=interwork -I ..\Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include--pd "__UVISION_VERSION SETA 537" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o echo_a\startup_stm32f103xb.o --depend echo_a\startup_stm32f103xb.d)
-F (../Src/main.c)(0x64C5BDD8)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\main.o --omf_browse echo_a\main.crf --depend echo_a\main.d)
+F (../Src/main.c)(0x64C5C5A2)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\main.o --omf_browse echo_a\main.crf --depend echo_a\main.d)
 I (../Inc/main.h)(0x64C5BC12)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6402F80B)
 I (../Inc/stm32f1xx_hal_conf.h)(0x64C5BE28)
@@ -58,7 +58,7 @@ I (../Inc/usart.h)(0x64AFF4FF)
 I (../Inc/gpio.h)(0x64AFF4FD)
 I (../Middlewares/Peripheral/OLED/Inc/OLED.h)(0x64BB9B71)
 I (../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h)(0x64B2574C)
-I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C332)
+I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C33C)
 F (../Src/gpio.c)(0x64AFF4FC)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\gpio.o --omf_browse echo_a\gpio.crf --depend echo_a\gpio.d)
 I (../Inc/gpio.h)(0x64AFF4FD)
 I (../Inc/main.h)(0x64C5BC12)
@@ -417,7 +417,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6402F80B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6402F80B)
 I (../Inc/stm32f1xx_it.h)(0x64C5BE28)
 I (../Inc/can.h)(0x64C4FE91)
-I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C332)
+I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C33C)
 F (../Src/stm32f1xx_hal_msp.c)(0x64AFF4FF)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\stm32f1xx_hal_msp.o --omf_browse echo_a\stm32f1xx_hal_msp.crf --depend echo_a\stm32f1xx_hal_msp.d)
 I (../Inc/main.h)(0x64C5BC12)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6402F80B)
@@ -1309,7 +1309,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6402F80B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6402F80B)
 I (../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h)(0x64B2574C)
 F (..\Middlewares\Comm\Src\IMU.c)(0x64C5C24E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\imu.o --omf_browse echo_a\imu.crf --depend echo_a\imu.d)
-I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C332)
+I (../Middlewares/Comm/Inc/IMU.h)(0x64C5C33C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6402F80B)
 I (../Inc/stm32f1xx_hal_conf.h)(0x64C5BE28)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6402F80B)
