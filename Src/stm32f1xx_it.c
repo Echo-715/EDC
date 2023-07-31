@@ -22,11 +22,14 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "can.h"
+#include "IMU.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+extern SysDataTypeDef Receive;
+extern IMUTypeDef BMI088;
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -60,7 +63,7 @@ extern DMA_HandleTypeDef hdma_usart2_rx;
 extern DMA_HandleTypeDef hdma_usart2_tx;
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
-extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN EV */
 
@@ -196,7 +199,11 @@ void DMA1_Channel7_IRQHandler(void)
 void USB_LP_CAN1_RX0_IRQHandler(void)
 {
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
-
+      
+      /* code */
+  HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxMessage,Receive.data_can);
+  IMU_MesReceive(&RxMessage,Receive.data_can,&BMI088);
+    
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 1 */
 
@@ -204,17 +211,17 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM2 global interrupt.
+  * @brief This function handles TIM4 global interrupt.
   */
-void TIM2_IRQHandler(void)
+void TIM4_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM2_IRQn 0 */
+  /* USER CODE BEGIN TIM4_IRQn 0 */
 
-  /* USER CODE END TIM2_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim2);
-  /* USER CODE BEGIN TIM2_IRQn 1 */
+  /* USER CODE END TIM4_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim4);
+  /* USER CODE BEGIN TIM4_IRQn 1 */
 
-  /* USER CODE END TIM2_IRQn 1 */
+  /* USER CODE END TIM4_IRQn 1 */
 }
 
 /**
@@ -226,20 +233,20 @@ void USART2_IRQHandler(void)
 
   /* USER CODE END USART2_IRQn 0 */
   /* USER CODE BEGIN USART2_IRQn 1 */
-		// if (__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
-		// {
+		if (__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
+		{
 				
-		// 	// uint8_t  Rx_Len = 120 ;//DMA_Remaining_Quantity = 0;
+			uint8_t  Rx_Len = 8 ;// , DMA_Remaining_Quantity = 0;
 
-		// 	HAL_UART_DMAStop(&huart2);
+			HAL_UART_DMAStop(&huart2);
 			
-		// //	DMA_Remaining_Quantity = __HAL_DMA_GET_COUNTER(&hdma_usart2_rx);
+			//DMA_Remaining_Quantity = __HAL_DMA_GET_COUNTER(&hdma_usart2_rx);
 			
-		// 	// HAL_UART_Receive_DMA(&huart2,RxData,Rx_Len);
+			HAL_UART_Receive_DMA(&huart2,Receive.data_usart,Rx_Len);
+			
+      __HAL_UART_CLEAR_IDLEFLAG(&huart2);
 
-    //   __HAL_UART_CLEAR_IDLEFLAG(&huart2);
-
-		// }
+		}
   /* USER CODE END USART2_IRQn 1 */
 }
 

@@ -36,7 +36,15 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+typedef struct 
+{
+  /* data */
+  uint8_t data_can[8];
+  uint8_t data_usart[8];
 
+}SysDataTypeDef;
+
+extern SysDataTypeDef Receive;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

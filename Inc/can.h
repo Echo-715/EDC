@@ -35,7 +35,7 @@ extern "C" {
 extern CAN_HandleTypeDef hcan;
 
 /* USER CODE BEGIN Private defines */
-
+extern CAN_RxHeaderTypeDef RxMessage;
 /* USER CODE END Private defines */
 
 void MX_CAN_Init(void);

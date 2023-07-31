@@ -56,3 +56,4 @@ echo_a\main.o: ../Inc/usart.h
 echo_a\main.o: ../Inc/gpio.h
 echo_a\main.o: ../Middlewares/Peripheral/OLED/Inc/OLED.h
 echo_a\main.o: ../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h
+echo_a\main.o: ../Middlewares/Comm/Inc/IMU.h
