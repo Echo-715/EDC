@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "grayscale_sensor.h": "c",
+        "motor.h": "c",
+        "pid.h": "c",
+        "zeml_def.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "chassis_ctrl.h": "c"
+    }
+}
