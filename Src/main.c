@@ -32,11 +32,13 @@
 /* USER CODE BEGIN Includes */
 #include "OLED.h"
 #include "Buzzer.h"
+#include "IMU.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+SysDataTypeDef Receive;
+IMUTypeDef BMI088;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -111,9 +113,14 @@ int main(void)
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
   /*TIM3*/
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+  HAL_CAN_Start(&hcan);
 
   /*开机提示*/
 	Boot_Prompt();
+	/*OLED初始化*/
+//	OLED_Init();
+//	/*清空OLED所有显示内容*/
+//	OLED_CLS();
 
   /* USER CODE END 2 */
 
@@ -129,10 +136,7 @@ int main(void)
 
   
 
-	  /*OLED初始化*/
- // OLED_Init();
-  /*清空OLED所有显示内容*/
-  //OLED_CLS();
+
 	
   while (1)
   {
@@ -188,7 +192,7 @@ void SystemClock_Config(void)
 
 /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM2 interrupt took place, inside
+  * @note   This function is called  when TIM4 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -199,7 +203,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM2) {
+  if (htim->Instance == TIM4) {
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */

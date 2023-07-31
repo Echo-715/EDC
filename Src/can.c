@@ -21,7 +21,7 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
-
+CAN_RxHeaderTypeDef RxMessage;
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan;
@@ -55,6 +55,22 @@ void MX_CAN_Init(void)
   }
   /* USER CODE BEGIN CAN_Init 2 */
 
+	CAN_FilterTypeDef filter;
+  
+	filter.FilterBank=1;//ÂË²¨Æ÷±àºÅ
+	filter.FilterMode=CAN_FILTERMODE_IDMASK;//ÑÚÂëÄ£Ê½
+	filter.FilterScale=CAN_FILTERSCALE_32BIT;
+	filter.FilterIdHigh=0x0000;
+	filter.FilterIdLow=0x0000;
+	filter.FilterMaskIdHigh=0x0000;
+	filter.FilterMaskIdLow=0x0000;
+	filter.FilterFIFOAssignment=CAN_FILTER_FIFO0;//FIFO0
+	filter.FilterActivation=ENABLE;
+  
+  if(HAL_CAN_ConfigFilter(&hcan,&filter)!=HAL_OK)
+	{
+		Error_Handler();
+	}	
   /* USER CODE END CAN_Init 2 */
 
 }
@@ -87,10 +103,10 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
-    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 1, 0);
+    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(USB_LP_CAN1_RX0_IRQn);
   /* USER CODE BEGIN CAN1_MspInit 1 */
-
+    __HAL_CAN_ENABLE_IT(&hcan,CAN_IT_RX_FIFO0_MSG_PENDING);
   /* USER CODE END CAN1_MspInit 1 */
   }
 }

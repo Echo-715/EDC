@@ -242,6 +242,57 @@ void OLED_ShowCN(uint8_t x, uint8_t y, uint8_t N)
 }
 
 /**
+ * @brief
+ * @param x：起始点横坐标 范围：0~127
+ * @param y：起始点纵坐标 范围：0~7
+ * @param N：汉字在asc.h(ASCII码)中的索引
+ * @retval None
+*/
+void OLED_ShowCN2(uint8_t x, uint8_t y, uint8_t N)
+{
+	uint8_t wm=0;
+	unsigned int  adder=32*N;
+	OLED_SetPos(x , y);
+	for(wm = 0;wm < 16;wm++)
+	{
+		OLED_DataWrite(F16x16_2[adder]);
+		adder += 1;
+	}
+	OLED_SetPos(x,y + 1);
+	for(wm = 0;wm < 16;wm++)
+	{
+		OLED_DataWrite(F16x16_2[adder]);
+		adder += 1;
+	}
+}
+
+/**
+ * @brief
+ * @param x：起始点横坐标 范围：0~127
+ * @param y：起始点纵坐标 范围：0~7
+ * @param N：汉字在asc.h(ASCII码)中的索引
+ * @retval None
+*/
+void OLED_ShowCN3(uint8_t x, uint8_t y, uint8_t N)
+{
+	uint8_t wm=0;
+	unsigned int  adder=32*N;
+	OLED_SetPos(x , y);
+	for(wm = 0;wm < 16;wm++)
+	{
+		OLED_DataWrite(F16x16_3[adder]);
+		adder += 1;
+	}
+	OLED_SetPos(x,y + 1);
+	for(wm = 0;wm < 16;wm++)
+	{
+		OLED_DataWrite(F16x16_3[adder]);
+		adder += 1;
+	}
+}
+
+
+/**
  * @brief 这是自己写的显示中文字符串的函数，要先把中文字符串“共阴——列行式——逆向输出”取字模后存入asc.h相应的位置(连续存入)
  * @param x:起始横坐标  范围：0~127
  * @param y:起始纵坐标  范围：0~7
@@ -254,6 +305,17 @@ void OLED_ShowCN_STR(uint8_t x , uint8_t y , uint8_t begin , uint8_t num)
 {
 	uint8_t i;
 	for(i=0;i<num;i++){OLED_ShowCN(i*16+x,y,i+begin);}    //OLED显示标题
+}
+void OLED_ShowCN_STR2(uint8_t x , uint8_t y , uint8_t begin , uint8_t num)
+{
+	uint8_t i;
+	for(i=0;i<num;i++){OLED_ShowCN2(i*16+x,y,i+begin);}    //OLED显示标题
+}
+
+void OLED_ShowCN_STR3(uint8_t x , uint8_t y , uint8_t begin , uint8_t num)
+{
+	uint8_t i;
+	for(i=0;i<num;i++){OLED_ShowCN3(i*16+x,y,i+begin);}    //OLED显示标题
 }
 /**
  * @}

@@ -42,6 +42,10 @@
 void OLED_ShowStr(uint8_t x, uint8_t y, uint8_t ch[], uint8_t TextSize);/*显示字符串*/
 void OLED_ShowCN(uint8_t x, uint8_t y, uint8_t N);/*显示单个中文字符*/
 void OLED_ShowCN_STR(uint8_t x , uint8_t y , uint8_t begin , uint8_t num);/*显示中文字符串*/
+void OLED_ShowCN2(uint8_t x, uint8_t y, uint8_t N);
+void OLED_ShowCN_STR2(uint8_t x , uint8_t y , uint8_t begin , uint8_t num);
+void OLED_ShowCN3(uint8_t x, uint8_t y, uint8_t N);
+void OLED_ShowCN_STR3(uint8_t x , uint8_t y , uint8_t begin , uint8_t num);
 /**
   * @}
   */
