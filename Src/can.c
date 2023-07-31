@@ -137,5 +137,46 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 }
 
 /* USER CODE BEGIN 1 */
-
+void Message_buffer(CAN_RxHeaderTypeDef* RxMessage, uint8_t RxData[8],uint8_t buf[][8])
+{
+	static uint8_t i;
+	
+	if(0x201 == RxMessage->StdId)	
+	{
+		for(i = 0; i < 6; i++)	
+			buf[0][i] = RxData[i];
+	}
+	else if(0x202 == RxMessage->StdId)
+	{
+		for(i = 0; i < 6; i++)
+			buf[1][i] =RxData[i];
+	}
+	else if(0x203 == RxMessage->StdId)
+	{
+		for(i = 0; i < 6; i++)
+			buf[2][i] =RxData[i];
+	}
+	else if(0x204 == RxMessage->StdId)
+	{
+		for(i = 0; i < 6; i++)
+			buf[3][i] = RxData[i];
+	}
+	
+	else if(0x205 == RxMessage->StdId)  
+	{
+		for(i = 0; i < 6; i++)	
+			buf[4][i] = RxData[i];  
+	}
+	else if(0x206 == RxMessage->StdId)  
+	{
+		for(i = 0; i < 6; i++)
+			buf[5][i] = RxData[i];  
+	}
+	
+	else if(0x207 == RxMessage->StdId)
+	{
+		for(i = 0; i < 6; i++)		
+			buf[6][i] = RxData[i];
+	}		
+}
 /* USER CODE END 1 */

@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "can.h"
 #include "IMU.h"
+#include "Motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +45,7 @@ extern IMUTypeDef BMI088;
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+uint8_t can_data[16][8];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -202,7 +203,9 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
       
       /* code */
   HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxMessage,Receive.data_can);
+  Message_buffer(&RxMessage,Receive.data_can,can_data);
   IMU_MesReceive(&RxMessage,Receive.data_can,&BMI088);
+  MotorData_Process(&M3508,can_data);
     
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 1 */
