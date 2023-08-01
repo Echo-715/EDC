@@ -61,7 +61,7 @@ void Key_Scan(KEY_StateTypeDef *allkey)
                 }
                 else if (!KEY2_RESET)
                 {
-                    /* code */
+                    /* code */ 
                 falg2 = !falg2;
                 }
     
