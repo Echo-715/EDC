@@ -12,6 +12,7 @@
 "motor_control_board\usart.o"
 "motor_control_board\stm32f1xx_it.o"
 "motor_control_board\stm32f1xx_hal_msp.o"
+"motor_control_board\stm32f1xx_hal_timebase_tim.o"
 "motor_control_board\stm32f1xx_hal_gpio_ex.o"
 "motor_control_board\stm32f1xx_hal_can.o"
 "motor_control_board\stm32f1xx_hal.o"

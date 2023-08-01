@@ -104,7 +104,6 @@ typedef struct
 
 }Gary_HandleTypeDef;
 
-extern Gary_HandleTypeDef Gary;
 
 /* Exported functions prototypes º¯ÊıÉùÃ÷---------------------------------------------*/
 /**

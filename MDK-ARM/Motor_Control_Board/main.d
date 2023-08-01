@@ -55,3 +55,4 @@ motor_control_board\main.o: ../Core/Inc/usart.h
 motor_control_board\main.o: ../Core/Inc/gpio.h
 motor_control_board\main.o: ../ZEML/Middlewares/Algorithm/Control/Inc/PID.h
 motor_control_board\main.o: ../ZEML/Drivers/BSP/Peripheral/Motor/Inc/Motor.h
+motor_control_board\main.o: ../ZEML/Drivers/BSP/Peripheral/Grayscale_Sensor/Inc/Grayscale_Sensor.h

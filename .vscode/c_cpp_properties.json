@@ -17,6 +17,7 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\Middlewares\\Third_Party\\FreeRTOS\\Source\\include",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\Middlewares\\Third_Party\\FreeRTOS\\Source\\CMSIS_RTOS",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\RVDS\\ARM_CM3",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\ZEML\\Middlewares\\Comm\\Inc",
                 "D:\\Keil_V\\ARM\\ARMCC\\include",
                 "D:\\Keil_V\\ARM\\ARMCC\\include\\rw",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\MDK-ARM",
@@ -25,6 +26,7 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\ZEML\\Drivers\\BSP\\Peripheral\\Grayscale_Sensor\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\ZEML\\Drivers\\BSP\\Peripheral\\Motor\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\ZEML\\Middlewares\\Algorithm\\Control\\Src",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\ZEML\\Middlewares\\Comm\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\Middlewares\\Third_Party\\FreeRTOS\\Source",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Motor_Control_Board\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\MemMang"
             ],

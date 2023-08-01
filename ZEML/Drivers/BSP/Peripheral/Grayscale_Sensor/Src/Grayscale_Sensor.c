@@ -15,7 +15,7 @@
 #include "Grayscale_Sensor.h"
 #include "i2c.h"
 /* Exported types 类型定义------------------------------------------------------------*/
-Gary_HandleTypeDef Gary;
+
 /* Exported constants 常量定义--------------------------------------------------------*/
 
 /* Exported macro 宏定义------------------------------------------------------------*/
@@ -39,7 +39,7 @@ uint8_t Gray_Init (Gary_HandleTypeDef *GaryX)
   for (uint8_t i = 1; i < 128; i++)
   {
     /* 读取设备地址内容 */
-    GaryX->GarySta = HAL_I2C_IsDeviceReady(&hi2c1,(uint16_t)(i<<1),2,100);
+    GaryX->GarySta = HAL_I2C_IsDeviceReady(&hi2c1,(uint16_t)(i<<1),2,10);
     if (GaryX->GarySta != HAL_OK)
     {
       /*没有读取到，归零*/
@@ -86,9 +86,9 @@ void Gary_Read_8bit (Gary_HandleTypeDef *GaryX)
 {
   GaryX->cmd = GRAY_DIGITAL_MODE;
 
-  HAL_I2C_Master_Transmit(&hi2c1,GRAY_ADDR_DEF << 1,&GaryX->cmd,1,100);
+  HAL_I2C_Master_Transmit(&hi2c2,GRAY_ADDR_DEF << 1,&GaryX->cmd,1,10);
 
-  HAL_I2C_Master_Receive(&hi2c1,GRAY_ADDR_DEF << 1,&GaryX->receive_8bit,1,100);
+  HAL_I2C_Master_Receive(&hi2c2,GRAY_ADDR_DEF << 1,&GaryX->receive_8bit,1,10);
 
 }
 
@@ -99,11 +99,11 @@ void Gary_Read_8bit (Gary_HandleTypeDef *GaryX)
 */
 void Gary_Read_8OC (Gary_HandleTypeDef *GaryX)
 {
-  GaryX->cmd = GRAY_ANALOG_MODE;
-
-  HAL_I2C_Master_Transmit(&hi2c1,GRAY_ADDR_DEF << 1, &GaryX->cmd,1,100);
+	GaryX->cmd = GRAY_ANALOG_MODE;
+	
+  HAL_I2C_Master_Transmit(&hi2c2,GRAY_ADDR_DEF << 1, &GaryX->cmd,1,10);
   
-  HAL_I2C_Master_Receive(&hi2c1,GRAY_ADDR_DEF << 1,GaryX->OC,8,100);
+  HAL_I2C_Master_Receive(&hi2c2,GRAY_ADDR_DEF << 1,GaryX->OC,8,10);
 
 }
 

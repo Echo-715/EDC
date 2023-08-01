@@ -34,6 +34,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 extern TIM_HandleTypeDef htim8;
+extern Gary_HandleTypeDef Gary_1;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -154,10 +155,10 @@ void Chassis(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    crossroad(&Gary,2);
-		Turn_90_chack(&Gary);
-    Motor.output[0] = (SpeedPID_Process(&Chassis_PID,30,Motor.velocity[0])+LocationPID_Process(&Location_PID,34,Gary.OC[3]));
-    Motor.output[1] = (SpeedPID_Process(&Chassis_PID,30,Motor.velocity[1])+LocationPID_Process(&Location_PID,29,Gary.OC[4]));
+    crossroad(&Gary_1,2);
+		Turn_90_chack(&Gary_1);
+    Motor.output[0] = (SpeedPID_Process(&Chassis_PID,30,Motor.velocity[0])+LocationPID_Process(&Location_PID,34,Gary_1.OC[3]));
+    Motor.output[1] = (SpeedPID_Process(&Chassis_PID,30,Motor.velocity[1])+LocationPID_Process(&Location_PID,29,Gary_1.OC[4]));
     Motor_Output(Motor_1,Motor.output);
 		Motor_Output(Motor_2,Motor.output);
     osDelay(1);
@@ -196,7 +197,7 @@ void Info_Update(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		Gary_Read_8OC(&Gary);
+		
     osDelay(1);
   }
   /* USER CODE END Info_Update */

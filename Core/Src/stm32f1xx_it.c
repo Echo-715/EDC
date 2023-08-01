@@ -20,15 +20,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_it.h"
-#include "FreeRTOS.h"
-#include "task.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Motor.h"
 #include "PID.h"
-
+#include "Comm.h"
 #include "can.h"
 #include "i2c.h"
+#include "Grayscale_Sensor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +47,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+uint8_t can_data[16][8];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,8 +71,11 @@ extern DMA_HandleTypeDef hdma_usart2_rx;
 extern DMA_HandleTypeDef hdma_usart2_tx;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
+extern TIM_HandleTypeDef htim7;
+
 /* USER CODE BEGIN EV */
 extern TIM_HandleTypeDef htim8;
+extern Gary_HandleTypeDef Gary_1;
 
 /* USER CODE END EV */
 
@@ -168,28 +170,6 @@ void DebugMon_Handler(void)
   /* USER CODE END DebugMonitor_IRQn 1 */
 }
 
-/**
-  * @brief This function handles System tick timer.
-  */
-void SysTick_Handler(void)
-{
-  /* USER CODE BEGIN SysTick_IRQn 0 */
-
-  /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
-#if (INCLUDE_xTaskGetSchedulerState == 1 )
-  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
-  {
-#endif /* INCLUDE_xTaskGetSchedulerState */
-  xPortSysTickHandler();
-#if (INCLUDE_xTaskGetSchedulerState == 1 )
-  }
-#endif /* INCLUDE_xTaskGetSchedulerState */
-  /* USER CODE BEGIN SysTick_IRQn 1 */
-
-  /* USER CODE END SysTick_IRQn 1 */
-}
-
 /******************************************************************************/
 /* STM32F1xx Peripheral Interrupt Handlers                                    */
 /* Add here the Interrupt Handlers for the used peripherals.                  */
@@ -231,7 +211,10 @@ void DMA1_Channel7_IRQHandler(void)
 void USB_LP_CAN1_RX0_IRQHandler(void)
 {
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
-
+//  HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxMessage,Receive.data_can);
+//  Message_buffer(&RxMessage,Receive.data_can,can_data);
+//  IMU_MesReceive(&RxMessage,Receive.data_can,&BMI088);
+//  MotorData_Process(&M3508,can_data);
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 1 */
 
@@ -349,6 +332,7 @@ void TIM6_IRQHandler(void)
   /* USER CODE BEGIN TIM6_IRQn 0 */
   if(__HAL_TIM_GET_FLAG(&htim6,TIM_FLAG_UPDATE) != RESET)
   {
+    Gary_Read_8OC(&Gary_1);
     Motor.velocity[0] = Get_Velocity(&htim3);
     Motor.velocity[1] = Get_Velocity(&htim5);
   }
@@ -356,6 +340,20 @@ void TIM6_IRQHandler(void)
   /* USER CODE BEGIN TIM6_IRQn 1 */
 	__HAL_TIM_CLEAR_FLAG(&htim6,TIM_FLAG_UPDATE);
   /* USER CODE END TIM6_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM7 global interrupt.
+  */
+void TIM7_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM7_IRQn 0 */
+
+  /* USER CODE END TIM7_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim7);
+  /* USER CODE BEGIN TIM7_IRQn 1 */
+
+  /* USER CODE END TIM7_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
