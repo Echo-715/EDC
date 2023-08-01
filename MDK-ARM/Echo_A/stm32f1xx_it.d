@@ -35,3 +35,4 @@ echo_a\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 echo_a\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
 echo_a\stm32f1xx_it.o: ../Inc/can.h
 echo_a\stm32f1xx_it.o: ../Middlewares/Comm/Inc/IMU.h
+echo_a\stm32f1xx_it.o: ..\Middlewares\Peripheral\Motor\Inc\Motor.h

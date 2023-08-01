@@ -5,7 +5,7 @@
 **********************************************************************
 
 File          : E:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Echo_A.jdebug
-Created       : 30 Jul 2023 09:27
+Created       : 31 Jul 2023 10:04
 Ozone Version : V3.28e
 */
 
@@ -25,9 +25,9 @@ void OnProjectLoad (void) {
   Project.AddPathSubstitute ("E:/.Echo/About Me/Competition/EDC/CODE/Echo_A", "$(ProjectDir)");
   Project.AddPathSubstitute ("e:/.echo/about me/competition/edc/code/echo_a", "$(ProjectDir)");
   Project.SetDevice ("Cortex-M4");
-  Project.SetHostIF ("USB", "123456");
+  Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
-  Project.SetTIFSpeed ("5 MHz");
+  Project.SetTIFSpeed ("4 MHz");
   Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M4F.svd");
   Project.AddSvdFile ("$(InstallDir)/Config/Peripherals/STM32F103xx.svd");
   //
