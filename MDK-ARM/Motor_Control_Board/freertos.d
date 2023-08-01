@@ -47,6 +47,7 @@ motor_control_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/inclu
 motor_control_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 motor_control_board\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 motor_control_board\freertos.o: ../ZEML/Middlewares/Algorithm/Control/Inc/PID.h
+motor_control_board\freertos.o: ../Core/Inc/can.h
 motor_control_board\freertos.o: ../ZEML/Drivers/BSP/Peripheral/Motor/Inc/Motor.h
 motor_control_board\freertos.o: ../ZEML/Drivers/BSP/Peripheral/Grayscale_Sensor/Inc/Grayscale_Sensor.h
 motor_control_board\freertos.o: ../Core/Inc/Chassis_CTRL.h

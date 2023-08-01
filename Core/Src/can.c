@@ -22,7 +22,6 @@
 
 /* USER CODE BEGIN 0 */
 CAN_RxHeaderTypeDef RxMessage;
-CAN_RxHeaderTypeDef TxMessage;
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan;
@@ -136,6 +135,34 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void CAN_Send_Message(	uint32_t ID,
+												int16_t cm1_iq, 
+												int16_t cm2_iq, 
+												int16_t cm3_iq, 
+												int16_t cm4_iq  )
+{
+	uint8_t tx_data[8] = {0};
+	CAN_TxHeaderTypeDef TxMessage;
+	uint32_t Tx_Mailbox = 0;
+	// ????????TxMessage??????
+	TxMessage.StdId = ID; 	 // ???ID
+	TxMessage.IDE = CAN_ID_STD;	// ????
+	TxMessage.RTR = CAN_RTR_DATA; 	// ???????
+	TxMessage.DLC = 8;	// ?????8??
+	
+	tx_data[0] = (uint8_t)(cm1_iq >> 8);
+	tx_data[1] = (uint8_t)cm1_iq;
+	tx_data[2] = (uint8_t)(cm2_iq >> 8);
+	tx_data[3] = (uint8_t)cm2_iq;
+	tx_data[4] = (uint8_t)(cm3_iq >> 8);
+	tx_data[5] = (uint8_t)cm3_iq;
+	tx_data[6] = (uint8_t)(cm4_iq >> 8);
+	tx_data[7] = (uint8_t)cm4_iq;
+	
+ HAL_CAN_AddTxMessage(&hcan,&TxMessage,tx_data,&Tx_Mailbox); //CAN????
+	
+}
+
 void Message_buffer(CAN_RxHeaderTypeDef* RxMessage, uint8_t RxData[8],uint8_t buf[][8])
 {
 	static uint8_t i;

@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "PID.h"
+#include "can.h"
 #include "Motor.h"
 #include "Grayscale_Sensor.h"
 #include "Chassis_CTRL.h"
@@ -125,7 +126,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of ChassisTask */
-  osThreadDef(ChassisTask, Chassis, osPriorityAboveNormal, 0, 128);
+  osThreadDef(ChassisTask, Chassis, osPriorityNormal, 0, 128);
   ChassisTaskHandle = osThreadCreate(osThread(ChassisTask), NULL);
 
   /* definition and creation of GimbalTask */
@@ -133,7 +134,7 @@ void MX_FREERTOS_Init(void) {
   GimbalTaskHandle = osThreadCreate(osThread(GimbalTask), NULL);
 
   /* definition and creation of InfoTask */
-  osThreadDef(InfoTask, Info_Update, osPriorityHigh, 0, 128);
+  osThreadDef(InfoTask, Info_Update, osPriorityNormal, 0, 128);
   InfoTaskHandle = osThreadCreate(osThread(InfoTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -179,6 +180,7 @@ void Gimbal(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+   // CAN_Send_Message(0x200,1300,0,0,0);
     osDelay(1);
   }
   /* USER CODE END Gimbal */
@@ -197,7 +199,7 @@ void Info_Update(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		
+		Gary_Read_8OC(&Gary_1);
     osDelay(1);
   }
   /* USER CODE END Info_Update */

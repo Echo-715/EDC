@@ -33,6 +33,15 @@ motor_control_board\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1x
 motor_control_board\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 motor_control_board\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 motor_control_board\stm32f1xx_it.o: ../Core/Inc/stm32f1xx_it.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+motor_control_board\stm32f1xx_it.o: ../Core/Inc/FreeRTOSConfig.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+motor_control_board\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 motor_control_board\stm32f1xx_it.o: ../ZEML/Drivers/BSP/Peripheral/Motor/Inc/Motor.h
 motor_control_board\stm32f1xx_it.o: ../ZEML/Middlewares/Algorithm/Control/Inc/PID.h
 motor_control_board\stm32f1xx_it.o: ../ZEML/Middlewares/Comm/Inc/Comm.h
