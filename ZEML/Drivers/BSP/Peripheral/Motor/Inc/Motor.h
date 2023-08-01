@@ -32,11 +32,29 @@ typedef struct
 {
   /* data */
   int velocity[4];
-  float output[4]; 
+  float output[4];
+
+
 
 }MotorTyprDef;
 
+typedef struct 
+{
+  /* data */
+    struct 
+  {
+    /* data */
+    int16_t Rotor_angle;
+    int16_t Rotor_speed;
+    int16_t Torque_current;
+    int16_t Temperature;
+
+  }ID[8];
+
+}M3508TypeDef;
+
 extern MotorTyprDef Motor;
+extern M3508TypeDef M3508;
 /* Exported constants 常量定义--------------------------------------------------------*/
 /* Exported macro 宏定义------------------------------------------------------------*/
   #define CHASSISPID_SPEED_KP   4
@@ -71,6 +89,7 @@ extern MotorTyprDef Motor;
 #define MOTOR4_PIN_2   GPIO_PIN_15
 /* Exported functions prototypes 函数声明---------------------------------------------*/
 
+void MotorData_Process ( M3508TypeDef*M3508, uint8_t can_rx_data_buf[][8]);
 void Positive_Inversion (uint8_t direction , Motor_Numb Motor);
 int Read_Encoder(TIM_HandleTypeDef * TIMx);
 float Get_Velocity (TIM_HandleTypeDef * TIMx);

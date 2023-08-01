@@ -16,9 +16,27 @@
 /* Exported types 类型定义------------------------------------------------------------*/
 extern TIM_HandleTypeDef htim8;
 MotorTyprDef Motor;
+M3508TypeDef M3508;
 /* Exported constants 常量定义--------------------------------------------------------*/
 /* Exported macro 宏定义------------------------------------------------------------*/
 /* Exported functions prototypes 函数声明---------------------------------------------*/
+
+/*3508电机数据读取*/
+void MotorData_Process ( M3508TypeDef*M3508, uint8_t can_rx_data_buf[][8])
+{
+		// 
+	for (uint8_t i = 0; i < 8; i++)
+	{
+		/* code */
+		//转子角度
+		M3508->ID[i].Rotor_angle = (can_rx_data_buf[i][0]<<8) | can_rx_data_buf[i][1];
+		//电机转速
+		M3508->ID[i].Rotor_speed = (can_rx_data_buf[i][2]<<8) | can_rx_data_buf[i][3];
+		//转矩电流
+		M3508->ID[i].Torque_current = (can_rx_data_buf[i][4]<<8) | can_rx_data_buf[i][5];
+	}
+
+}
 
 /**
 * @brief  设置TB6612驱动电机正反转
