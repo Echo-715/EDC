@@ -76,7 +76,7 @@ void Boot_Prompt ()
   for (uint8_t i = 0; i < Length; i++) /*蜂鸣器播放音乐*/
   {
     /* code */
-    Buzzer_Volume(200);
+    Buzzer_Volume(10);
     Buzzer_Tonal(DoDoDU[i]);
     HAL_Delay(200);
   }
@@ -96,7 +96,7 @@ void Key_Prompt ()
     for (uint8_t i = 0; i < Length; i++) /*蜂鸣器播放音乐*/
   {
     /* code */
-    Buzzer_Volume(200);
+    Buzzer_Volume(10);
     Buzzer_Tonal(DoDoDU[i]);
     HAL_Delay(1);
   }

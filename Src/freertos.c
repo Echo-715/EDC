@@ -33,7 +33,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+StateTypeDef link;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -53,6 +53,7 @@
 osThreadId Task_UIHandle;
 osThreadId Task_InfoHandle;
 osThreadId Task_DetectionHandle;
+osThreadId Task_LEDHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -61,7 +62,8 @@ osThreadId Task_DetectionHandle;
 
 void UI(void const * argument);
 void Info(void const * argument);
-void KEY_Detection(void const * argument);
+void Detection(void const * argument);
+void LED(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -125,16 +127,20 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of Task_UI */
-  osThreadDef(Task_UI, UI, osPriorityLow, 0, 128);
+  osThreadDef(Task_UI, UI, osPriorityNormal, 0, 128);
   Task_UIHandle = osThreadCreate(osThread(Task_UI), NULL);
 
   /* definition and creation of Task_Info */
-  osThreadDef(Task_Info, Info, osPriorityBelowNormal, 0, 128);
+  osThreadDef(Task_Info, Info, osPriorityHigh, 0, 128);
   Task_InfoHandle = osThreadCreate(osThread(Task_Info), NULL);
 
   /* definition and creation of Task_Detection */
-  osThreadDef(Task_Detection, KEY_Detection, osPriorityIdle, 0, 128);
+  osThreadDef(Task_Detection, Detection, osPriorityLow, 0, 128);
   Task_DetectionHandle = osThreadCreate(osThread(Task_Detection), NULL);
+
+  /* definition and creation of Task_LED */
+  osThreadDef(Task_LED, LED, osPriorityLow, 0, 128);
+  Task_LEDHandle = osThreadCreate(osThread(Task_LED), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -153,28 +159,56 @@ void UI(void const * argument)
 {
   /* USER CODE BEGIN UI */
   uint8_t pages;
+  int time_now;
+
   /* Infinite loop */
   for(;;)
   {
     pages = Allkey.Memu;
+    time_now = HAL_GetTick();
     switch (pages )
     {
     case 0:
       /* code */
-      OLED_ShowString(2,6,"ZXD_CAR");
+      OLED_ShowString(1,6,"EDC_Car");
+          if (Per.CAN_state != time_now)
+    {
+      link.CAN_state = 0;
+    }
+    else
+    {
+      OLED_ShowString(2,2,"CAN_link");
+    }
+    
+    if (Per.IMU_state != 0x020)
+    {
+      /* code */
+      link.IMU_state = 0;
+    }
+    else
+    {
+      OLED_ShowString(2,8,"IMU_link");
+    }
+    if (Per.USART2_state != time_now)
+    {
+      /* code */
+      link.USART2_state = 0;
+    }
+    else
+    {
+      OLED_ShowString(3,2,"USART_link");
+    }
+
       break;
     case 1:
       /* code */
-      OLED_ShowString(2,1,"MOD:");
-      OLED_ShowNum(2,6,Allkey.key1.Flag,1);
-      break;
-    case 2:
-      /* code */
-      OLED_ShowString(2,6,"None");
-      break;
-    case 3:
-      /* code */
-      OLED_ShowString(2,6,"None");
+      OLED_ShowString(1,1,"MOD:");
+      OLED_ShowNum(1,6,Allkey.key1.Flag,1);
+      if (Allkey.key2.Flag)
+      {
+          /* code */
+        OLED_ShowString(1,8,"running!");
+      }
       break;
     default:
       break;
@@ -204,30 +238,54 @@ void Info(void const * argument)
   /* USER CODE END Info */
 }
 
-/* USER CODE BEGIN Header_KEY_Detection */
+/* USER CODE BEGIN Header_Detection */
 /**
 * @brief Function implementing the Task_Detection thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_KEY_Detection */
-void KEY_Detection(void const * argument)
+/* USER CODE END Header_Detection */
+void Detection(void const * argument)
 {
-  /* USER CODE BEGIN KEY_Detection */
+  /* USER CODE BEGIN Detection */
+  
   /* Infinite loop */
   for(;;)
   {
-    if((!KEY1_RESET) || (!KEY2_RESET))
+    
+    if ((!KEY1_RESET)||(!KEY2_RESET))
     {
-      osDelay(1);
+      /* code */
+      osDelay(5);
       Key_Prompt();
     }
-
+    osDelay(1);
     Key_Scan(&Allkey);
+
+    
 
     osDelay(1);
   }
-  /* USER CODE END KEY_Detection */
+  /* USER CODE END Detection */
+}
+
+/* USER CODE BEGIN Header_LED */
+/**
+* @brief Function implementing the Task_LED thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_LED */
+void LED(void const * argument)
+{
+  /* USER CODE BEGIN LED */
+  /* Infinite loop */
+  for(;;)
+  {
+	
+    osDelay(1);
+  }
+  /* USER CODE END LED */
 }
 
 /* Private application code --------------------------------------------------*/

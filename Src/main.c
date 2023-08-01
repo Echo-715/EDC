@@ -37,6 +37,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+StateTypeDef Per;
 SysDataTypeDef Receive;
 IMUTypeDef BMI088;
 /* USER CODE END PTD */

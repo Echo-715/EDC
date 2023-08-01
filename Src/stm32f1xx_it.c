@@ -202,11 +202,13 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
       
       /* code */
+  
   HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxMessage,Receive.data_can);
   Message_buffer(&RxMessage,Receive.data_can,can_data);
   IMU_MesReceive(&RxMessage,Receive.data_can,&BMI088);
   MotorData_Process(&M3508,can_data);
-    
+  Per.CAN_state = HAL_GetTick();
+  Per.IMU_state = RxMessage.StdId;
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 1 */
 
@@ -238,7 +240,7 @@ void USART2_IRQHandler(void)
   /* USER CODE BEGIN USART2_IRQn 1 */
 		if (__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
 		{
-				
+			Per.USART2_state = HAL_GetTick();	
 			uint8_t  Rx_Len = 8 ;// , DMA_Remaining_Quantity = 0;
 
 			HAL_UART_DMAStop(&huart2);

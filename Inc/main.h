@@ -41,15 +41,33 @@ typedef struct
   /* data */
   uint8_t data_can[8];
   uint8_t data_usart[8];
-
+  uint8_t data_vision[8];
 }SysDataTypeDef;
 
+typedef struct 
+{
+  /* data */
+  int CAN_state;
+  int USART2_state;
+  int USART3_state;
+  int IMU_state;
+  int Board_State;
+
+}StateTypeDef;
+
+extern StateTypeDef Per;
 extern SysDataTypeDef Receive;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
+#define LED1_SET  		__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, 100)
+#define LED2_SET			__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_2, 100)
+#define LED3_SET			__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, 100)
 
+#define LED1_RESET  		__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, 0)
+#define LED2_RESET			__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_2, 0)
+#define LED3_RESET			__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, 0)
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

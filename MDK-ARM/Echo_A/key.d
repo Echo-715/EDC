@@ -1,5 +1,5 @@
 echo_a\key.o: ..\Middlewares\Peripheral\KEY\Src\Key.c
-echo_a\key.o: ..\Middlewares\Peripheral\KEY\Inc\Key.h
+echo_a\key.o: ../Middlewares/Peripheral/KEY/Inc/Key.h
 echo_a\key.o: ../Inc/main.h
 echo_a\key.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 echo_a\key.o: ../Inc/stm32f1xx_hal_conf.h
