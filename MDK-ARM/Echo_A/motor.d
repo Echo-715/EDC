@@ -1,5 +1,5 @@
 echo_a\motor.o: ..\Middlewares\Peripheral\Motor\Src\Motor.c
-echo_a\motor.o: ..\Middlewares\Peripheral\Motor\Inc\Motor.h
+echo_a\motor.o: ../Middlewares/Peripheral/Motor/Inc/Motor.h
 echo_a\motor.o: ../Inc/main.h
 echo_a\motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 echo_a\motor.o: ../Inc/stm32f1xx_hal_conf.h

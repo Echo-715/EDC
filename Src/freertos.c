@@ -26,7 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "tim.h"
-
+#include "Key.h"
 #include "OLED.h"
 #include "Buzzer.h"
 /* USER CODE END Includes */
@@ -50,16 +50,18 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-osThreadId Task_OLEDHandle;
-osThreadId Task_BuzzerHandle;
+osThreadId Task_UIHandle;
+osThreadId Task_InfoHandle;
+osThreadId Task_DetectionHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void OLED(void const * argument);
-void Buzzer(void const * argument);
+void UI(void const * argument);
+void Info(void const * argument);
+void KEY_Detection(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -122,13 +124,17 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of Task_OLED */
-  osThreadDef(Task_OLED, OLED, osPriorityLow, 0, 128);
-  Task_OLEDHandle = osThreadCreate(osThread(Task_OLED), NULL);
+  /* definition and creation of Task_UI */
+  osThreadDef(Task_UI, UI, osPriorityLow, 0, 128);
+  Task_UIHandle = osThreadCreate(osThread(Task_UI), NULL);
 
-  /* definition and creation of Task_Buzzer */
-  osThreadDef(Task_Buzzer, Buzzer, osPriorityBelowNormal, 0, 128);
-  Task_BuzzerHandle = osThreadCreate(osThread(Task_Buzzer), NULL);
+  /* definition and creation of Task_Info */
+  osThreadDef(Task_Info, Info, osPriorityBelowNormal, 0, 128);
+  Task_InfoHandle = osThreadCreate(osThread(Task_Info), NULL);
+
+  /* definition and creation of Task_Detection */
+  osThreadDef(Task_Detection, KEY_Detection, osPriorityIdle, 0, 128);
+  Task_DetectionHandle = osThreadCreate(osThread(Task_Detection), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -136,42 +142,92 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_OLED */
+/* USER CODE BEGIN Header_UI */
 /**
-  * @brief  Function implementing the Task_OLED thread.
+  * @brief  Function implementing the Task_UI thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_OLED */
-void OLED(void const * argument)
+/* USER CODE END Header_UI */
+void UI(void const * argument)
 {
-  /* USER CODE BEGIN OLED */
+  /* USER CODE BEGIN UI */
+  uint8_t pages;
   /* Infinite loop */
   for(;;)
   {
-    
+    pages = Allkey.Memu;
+    switch (pages )
+    {
+    case 0:
+      /* code */
+      OLED_ShowString(2,6,"ZXD_CAR");
+      break;
+    case 1:
+      /* code */
+      OLED_ShowString(2,1,"MOD:");
+      OLED_ShowNum(2,6,Allkey.key1.Flag,1);
+      break;
+    case 2:
+      /* code */
+      OLED_ShowString(2,6,"None");
+      break;
+    case 3:
+      /* code */
+      OLED_ShowString(2,6,"None");
+      break;
+    default:
+      break;
+    }
+
     osDelay(1);
+
   }
-  /* USER CODE END OLED */
+  /* USER CODE END UI */
 }
 
-/* USER CODE BEGIN Header_Buzzer */
+/* USER CODE BEGIN Header_Info */
 /**
-* @brief Function implementing the Task_Buzzer thread.
+* @brief Function implementing the Task_Info thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_Buzzer */
-void Buzzer(void const * argument)
+/* USER CODE END Header_Info */
+void Info(void const * argument)
 {
-  /* USER CODE BEGIN Buzzer */
+  /* USER CODE BEGIN Info */
   /* Infinite loop */
   for(;;)
   {
-    
     osDelay(1);
   }
-  /* USER CODE END Buzzer */
+  /* USER CODE END Info */
+}
+
+/* USER CODE BEGIN Header_KEY_Detection */
+/**
+* @brief Function implementing the Task_Detection thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_KEY_Detection */
+void KEY_Detection(void const * argument)
+{
+  /* USER CODE BEGIN KEY_Detection */
+  /* Infinite loop */
+  for(;;)
+  {
+    if((!KEY1_RESET) || (!KEY2_RESET))
+    {
+      osDelay(1);
+      Key_Prompt();
+    }
+
+    Key_Scan(&Allkey);
+
+    osDelay(1);
+  }
+  /* USER CODE END KEY_Detection */
 }
 
 /* Private application code --------------------------------------------------*/

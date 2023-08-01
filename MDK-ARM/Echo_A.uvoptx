@@ -160,6 +160,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>BMI088</ItemText>
         </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>flag1</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
@@ -860,6 +865,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\Middlewares\Peripheral\Motor\Src\Motor.c</PathWithFileName>
       <FilenameWithoutPath>Motor.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>7</GroupNumber>
+      <FileNumber>50</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\Peripheral\KEY\Src\Key.c</PathWithFileName>
+      <FilenameWithoutPath>Key.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

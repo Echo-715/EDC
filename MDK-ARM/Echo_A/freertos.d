@@ -47,6 +47,7 @@ echo_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 echo_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 echo_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 echo_a\freertos.o: ../Inc/tim.h
+echo_a\freertos.o: ..\Middlewares\Peripheral\KEY\Inc\Key.h
 echo_a\freertos.o: ../Middlewares/Peripheral/OLED/Inc/OLED.h
 echo_a\freertos.o: ../Inc/i2c.h
 echo_a\freertos.o: ../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h

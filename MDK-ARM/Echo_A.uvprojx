@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Application/Inc;../Middlewares/Peripheral/OLED/Inc;../Middlewares/Peripheral/Buzzer/Inc;../Middlewares/Comm/Inc;..\Middlewares\Peripheral\Motor\Inc</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Application/Inc;../Middlewares/Peripheral/OLED/Inc;../Middlewares/Peripheral/Buzzer/Inc;../Middlewares/Comm/Inc;../Middlewares/Peripheral/Motor/Inc;..\Middlewares\Peripheral\KEY\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2275,6 +2275,11 @@
               <FileName>Motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Peripheral\Motor\Src\Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>Key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Peripheral\KEY\Src\Key.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -66,7 +66,8 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-
+#define KEY1_RESET  HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)
+#define KEY2_RESET  HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

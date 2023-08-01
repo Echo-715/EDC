@@ -60,6 +60,8 @@ void Buzzer_OFF (void);/*关闭蜂鸣器*/
  * @{
 */
 void Boot_Prompt (void);/*开机提示音*/
+void Key_Prompt (void);/*按键提示音*/
+
  /**
   * @ }
  */

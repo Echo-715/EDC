@@ -114,13 +114,12 @@ int main(void)
   /*TIM3*/
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
   HAL_CAN_Start(&hcan);
-
+	/*OLED初始化*/
+  OLED_Init();
+  
   /*开机提示*/
 	Boot_Prompt();
-	/*OLED初始化*/
-//	OLED_Init();
-//	/*清空OLED所有显示内容*/
-//	OLED_CLS();
+
 
   /* USER CODE END 2 */
 

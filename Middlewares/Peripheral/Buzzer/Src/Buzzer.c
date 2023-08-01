@@ -83,6 +83,25 @@ void Boot_Prompt ()
   Buzzer_OFF();
 
 }
+
+ /**
+  * @brief 按键提示音
+  * @param None
+  * @retval None
+  */
+void Key_Prompt ()
+{
+  int16_t DoDoDU[]={H_do}; /*音乐数组*/
+  int Length = sizeof(DoDoDU)/sizeof(DoDoDU[0]);
+    for (uint8_t i = 0; i < Length; i++) /*蜂鸣器播放音乐*/
+  {
+    /* code */
+    Buzzer_Volume(200);
+    Buzzer_Tonal(DoDoDU[i]);
+    HAL_Delay(1);
+  }
+  Buzzer_OFF(); 
+}
  /**
   * @ }
  */

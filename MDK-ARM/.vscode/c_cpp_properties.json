@@ -16,6 +16,7 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Inc",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Inc",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Motor\\Inc",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\KEY\\Inc",
                 "D:\\Keil_V\\ARM\\ARMCC\\include",
                 "D:\\Keil_V\\ARM\\ARMCC\\include\\rw",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\MDK-ARM",
@@ -27,7 +28,8 @@
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\OLED\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Buzzer\\Src",
                 "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Comm\\Src",
-                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Motor\\Src"
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\Motor\\Src",
+                "e:\\.Echo\\About Me\\Competition\\EDC\\CODE\\Echo_A\\Middlewares\\Peripheral\\KEY\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

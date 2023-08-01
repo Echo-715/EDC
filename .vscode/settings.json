@@ -3,6 +3,10 @@
         "stm32f1xx_hal.h": "c",
         "oled.h": "c",
         "main.h": "c",
-        "imu.h": "c"
+        "imu.h": "c",
+        "string": "c",
+        "array": "c",
+        "string_view": "c",
+        "i2c.h": "c"
     }
 }

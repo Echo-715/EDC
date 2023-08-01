@@ -48,6 +48,7 @@
 "echo_a\buzzer.o"
 "echo_a\imu.o"
 "echo_a\motor.o"
+"echo_a\key.o"
 --strict --scatter "Echo_A\Echo_A.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
