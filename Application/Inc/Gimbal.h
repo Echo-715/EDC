@@ -14,7 +14,7 @@
 typedef struct 
 {
     /* data */
-    int32_t Position;
+    float Position;
     int16_t Output;
     
 }GimbalTypeDef;
@@ -29,4 +29,6 @@ void Gimbal_StrPID(GimbalTypeDef *gimbal, MotorTypeDef *M3508,
                     int ExpLocation,uint8_t id);
 
 void Gimbal_CTRL(void);
+void MOD2 (void);
+
 #endif

@@ -14,3 +14,5 @@
 /// @brief Çó·ûºÅ
 #define sign(x) ((x) > 0 ? (+1) : ((x) < 0 ? (-1) : 0))
 
+
+float Ramp_float(float target_value,float current_value,float step_length);

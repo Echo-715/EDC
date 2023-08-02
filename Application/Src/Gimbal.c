@@ -2,9 +2,11 @@
 #include "Gimbal.h"
 #include "can.h"
 #include "Key.h"
+#include "Mymath.h"
 
 GimbalTypeDef Yaw;
 GimbalTypeDef Pitch;
+uint8_t flag[3];
 
 /*串级PID控制*/
 void Gimbal_StrPID(GimbalTypeDef *gimbal, MotorTypeDef *M3508,
@@ -25,18 +27,99 @@ void Gimbal_CTRL(void)
     {  
         Yaw.Position = 3230;
         Pitch.Position = 3244;
-    Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);
-    Gimbal_StrPID(&Pitch,&M3508,&Pitch_SpeedPID,&Pitch_LocationPID,Pitch.Position,Pitch_motorID);
+        Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);
+        Gimbal_StrPID(&Pitch,&M3508,&Pitch_SpeedPID,&Pitch_LocationPID,Pitch.Position,Pitch_motorID);
+    }
+    else if ((Allkey.key1.Flag==2)&&(Allkey.key2.Flag==1))
+    {
+        /* code */
+        MOD2();
     }
     else
     {
         Yaw.Output=0;
         Pitch.Output =0;
     }
-    /*输出处理*/
-	
-
     /*输出发送*/
     CAN_Send_Message(0X200,Yaw.Output,Pitch.Output,0,0);
+
+}
+ 
+
+void MOD2 (void)
+{
+    if (flag[2]==0)
+    {
+        /* code */
+        Yaw.Position = 3230;
+        Pitch.Position = 3244;
+        flag[2]++;
+    }
+
+    if ((flag[0]==0)&&(flag[1]==0))
+    {
+        /* code */
+        Yaw.Position = Ramp_float(3600,Yaw.Position,0.2);//
+        if (Yaw.Position == 3600)
+        {
+            /* code */
+            flag[0]=1;
+            flag[1]=1;
+        }
+        
+    }
+    if ((flag[0]==1)&&(flag[1]==1))
+    {
+        /* code */
+        Pitch.Position = Ramp_float(2890,Pitch.Position,0.2);//3167.44
+        if (Pitch.Position == 2890)
+        {
+            /* code */
+            flag[0]=2;
+            flag[1]=2;
+        }
+    }
+    if ((flag[0]==2)&&(flag[1]==2))
+    {
+        /* code */
+        Yaw.Position = Ramp_float(2845,Yaw.Position,0.2);//2860
+        if (Yaw.Position == 2845)
+        {
+            /* code */
+            flag[0]=3;
+            flag[1]=3;
+        }
+        
+    }
+    if ((flag[0]==3)&&(flag[1]==3))
+    {
+        /* code */
+        Pitch.Position = Ramp_float(3540,Pitch.Position,0.2);//3598
+        if(Pitch.Position == 3540)
+        {
+            flag[0]=4;
+            flag[1]=4;
+        }
+
+    }
+    if ((flag[0]==4)&&(flag[1]==4))
+    {
+        Yaw.Position = Ramp_float(3600,Yaw.Position,0.2);
+        if (Yaw.Position == 3600)
+        {
+            /* code */
+            flag[0] =5;
+            flag[1] =5;
+        }
+        
+    }
+    if((flag[0]==5)&&(flag[1]==5))
+    {
+        Pitch.Position = Ramp_float(3244,Pitch.Position,0.2);
+
+    }
+
+    Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);
+    Gimbal_StrPID(&Pitch,&M3508,&Pitch_SpeedPID,&Pitch_LocationPID,Pitch.Position,Pitch_motorID);
 
 }

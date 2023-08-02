@@ -86,9 +86,9 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  PID_Init(&Yaw_SpeedPID,10,0,0,1200,100,100);
+  PID_Init(&Yaw_SpeedPID,30,0.1f,0,3000,100,100);
   PID_Init(&Yaw_LocationPID,0.5f,0,0,1000,100,100);
-  PID_Init(&Pitch_SpeedPID,10,0,0,1200,100,100);
+  PID_Init(&Pitch_SpeedPID,15,0,0,2000,100,100);
   PID_Init(&Pitch_LocationPID,0.5f,0,0,1000,100,100);
   /* USER CODE END Init */
 
