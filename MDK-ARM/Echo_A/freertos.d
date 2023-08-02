@@ -51,3 +51,6 @@ echo_a\freertos.o: ../Middlewares/Peripheral/KEY/Inc/Key.h
 echo_a\freertos.o: ../Middlewares/Peripheral/OLED/Inc/OLED.h
 echo_a\freertos.o: ../Inc/i2c.h
 echo_a\freertos.o: ../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h
+echo_a\freertos.o: ../Application/Inc/Gimbal.h
+echo_a\freertos.o: ../Middlewares/Peripheral/Motor/Inc/Motor.h
+echo_a\freertos.o: ../Application/Inc/PID.h

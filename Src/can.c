@@ -137,6 +137,35 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 }
 
 /* USER CODE BEGIN 1 */
+/// @brief CAN发送报文
+void CAN_Send_Message(	uint32_t ID,
+												int16_t cm1_iq, 
+												int16_t cm2_iq, 
+												int16_t cm3_iq, 
+												int16_t cm4_iq  )
+{
+	uint8_t tx_data[8] = {0};
+	CAN_TxHeaderTypeDef TxMessage;
+	uint32_t Tx_Mailbox = 0;
+	// 对发送报文结构体TxMessage里的成员赋值
+	TxMessage.StdId = ID; 	 // 标准帧ID
+	TxMessage.IDE = CAN_ID_STD;	// 标准模式
+	TxMessage.RTR = CAN_RTR_DATA; 	// 发送的是数据帧
+	TxMessage.DLC = 8;	// 数据长度为8字节
+	
+	tx_data[0] = (uint8_t)(cm1_iq >> 8);
+	tx_data[1] = (uint8_t)cm1_iq;
+	tx_data[2] = (uint8_t)(cm2_iq >> 8);
+	tx_data[3] = (uint8_t)cm2_iq;
+	tx_data[4] = (uint8_t)(cm3_iq >> 8);
+	tx_data[5] = (uint8_t)cm3_iq;
+	tx_data[6] = (uint8_t)(cm4_iq >> 8);
+	tx_data[7] = (uint8_t)cm4_iq;
+	
+ HAL_CAN_AddTxMessage(&hcan,&TxMessage,tx_data,&Tx_Mailbox); //CAN发送数据
+	
+}
+
 void Message_buffer(CAN_RxHeaderTypeDef* RxMessage, uint8_t RxData[8],uint8_t buf[][8])
 {
 	static uint8_t i;

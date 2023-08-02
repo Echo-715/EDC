@@ -20,10 +20,11 @@ void Gimbal_StrPID(GimbalTypeDef *gimbal, MotorTypeDef *M3508,
 
 void Gimbal_CTRL(void)
 {
+	
     Yaw.Position = 3230;
     Pitch.Position = 3244;
     /*输出处理*/
-
+	
     Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);
 
     Gimbal_StrPID(&Pitch,&M3508,&Pitch_SpeedPID,&Pitch_LocationPID,Pitch.Position,Pitch_motorID);

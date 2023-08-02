@@ -41,6 +41,11 @@ extern CAN_RxHeaderTypeDef RxMessage;
 void MX_CAN_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+void CAN_Send_Message(	uint32_t ID,
+												int16_t cm1_iq, 
+												int16_t cm2_iq, 
+												int16_t cm3_iq, 
+												int16_t cm4_iq  );
 void Message_buffer(CAN_RxHeaderTypeDef* RxMessage, uint8_t RxData[8],uint8_t buf[][8]);
 /* USER CODE END Prototypes */
 

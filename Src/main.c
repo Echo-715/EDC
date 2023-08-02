@@ -33,11 +33,12 @@
 #include "OLED.h"
 #include "Buzzer.h"
 #include "IMU.h"
+#include "PID.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-StateTypeDef Per;
+
 SysDataTypeDef Receive;
 IMUTypeDef BMI088;
 /* USER CODE END PTD */
@@ -85,7 +86,10 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  PID_Init(&Yaw_SpeedPID,10,0,0,1000,100,100);
+  PID_Init(&Yaw_LocationPID,0.5f,0,0,1000,100,100);
+  PID_Init(&Pitch_SpeedPID,10,0,0,1000,100,100);
+  PID_Init(&Pitch_LocationPID,0.5f,0,0,1000,100,100);
   /* USER CODE END Init */
 
   /* Configure the system clock */

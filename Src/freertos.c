@@ -29,11 +29,12 @@
 #include "Key.h"
 #include "OLED.h"
 #include "Buzzer.h"
+#include "Gimbal.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-StateTypeDef link;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -158,62 +159,18 @@ void MX_FREERTOS_Init(void) {
 void UI(void const * argument)
 {
   /* USER CODE BEGIN UI */
-  uint8_t pages;
-  int time_now;
-
   /* Infinite loop */
   for(;;)
   {
-    pages = Allkey.Memu;
-    time_now = HAL_GetTick();
-    switch (pages )
+		Key_Scan(&Allkey);
+    OLED_ShowString(1,6,"EDC_Car");
+    OLED_ShowString(2,1,"MOD:");
+    OLED_ShowNum(2,6,Allkey.key1.Flag,1);
+    if (Allkey.key2.Flag)
     {
-    case 0:
-      /* code */
-      OLED_ShowString(1,6,"EDC_Car");
-          if (Per.CAN_state != time_now)
-    {
-      link.CAN_state = 0;
+        /* code */
+      OLED_ShowString(2,8,"running!");
     }
-    else
-    {
-      OLED_ShowString(2,2,"CAN_link");
-    }
-    
-    if (Per.IMU_state != 0x020)
-    {
-      /* code */
-      link.IMU_state = 0;
-    }
-    else
-    {
-      OLED_ShowString(2,8,"IMU_link");
-    }
-    if (Per.USART2_state != time_now)
-    {
-      /* code */
-      link.USART2_state = 0;
-    }
-    else
-    {
-      OLED_ShowString(3,2,"USART_link");
-    }
-
-      break;
-    case 1:
-      /* code */
-      OLED_ShowString(1,1,"MOD:");
-      OLED_ShowNum(1,6,Allkey.key1.Flag,1);
-      if (Allkey.key2.Flag)
-      {
-          /* code */
-        OLED_ShowString(1,8,"running!");
-      }
-      break;
-    default:
-      break;
-    }
-
     osDelay(1);
 
   }
@@ -233,6 +190,7 @@ void Info(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+		Gimbal_CTRL();
     osDelay(1);
   }
   /* USER CODE END Info */
@@ -256,13 +214,8 @@ void Detection(void const * argument)
     if ((!KEY1_RESET)||(!KEY2_RESET))
     {
       /* code */
-      osDelay(5);
       Key_Prompt();
     }
-    osDelay(1);
-    Key_Scan(&Allkey);
-
-    
 
     osDelay(1);
   }

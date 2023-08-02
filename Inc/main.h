@@ -44,18 +44,6 @@ typedef struct
   uint8_t data_vision[8];
 }SysDataTypeDef;
 
-typedef struct 
-{
-  /* data */
-  int CAN_state;
-  int USART2_state;
-  int USART3_state;
-  int IMU_state;
-  int Board_State;
-
-}StateTypeDef;
-
-extern StateTypeDef Per;
 extern SysDataTypeDef Receive;
 /* USER CODE END ET */
 
