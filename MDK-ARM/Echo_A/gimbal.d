@@ -36,3 +36,4 @@ echo_a\gimbal.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 echo_a\gimbal.o: ../Middlewares/Peripheral/Motor/Inc/Motor.h
 echo_a\gimbal.o: ../Application/Inc/PID.h
 echo_a\gimbal.o: ../Inc/can.h
+echo_a\gimbal.o: ../Middlewares/Peripheral/KEY/Inc/Key.h
