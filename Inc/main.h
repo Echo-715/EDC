@@ -53,7 +53,7 @@ typedef struct
         int16_t X;
         int16_t Y;
         
-    }Num[10];
+    }Num[20];
         
 }Poinset_TypeDef;
 

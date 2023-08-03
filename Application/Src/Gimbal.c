@@ -52,8 +52,8 @@ void Gimbal_CTRL(void)
     else if (initcompaly)
     {
         /* code */
-        Yaw.Position = 3230;
-        Pitch.Position = 3230;
+        Yaw.Position = Ramp_float(3230,Yaw.Position,0.5);
+        Pitch.Position = Ramp_float(3230,Yaw.Position,0.5);
 
         Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);
         Gimbal_StrPID(&Pitch,&M3508,&Pitch_SpeedPID,&Pitch_LocationPID,Pitch.Position,Pitch_motorID);
