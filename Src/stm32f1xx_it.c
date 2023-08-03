@@ -25,6 +25,8 @@
 #include "can.h"
 #include "IMU.h"
 #include "Motor.h"
+#include "Gimbal.h"
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -248,6 +250,7 @@ void USART2_IRQHandler(void)
 			//DMA_Remaining_Quantity = __HAL_DMA_GET_COUNTER(&hdma_usart2_rx);
 			
 			HAL_UART_Receive_DMA(&huart2,Receive.data_usart,Rx_Len);
+      VisionData_Process(Receive.data_usart,&frame);
 			
       __HAL_UART_CLEAR_IDLEFLAG(&huart2);
 

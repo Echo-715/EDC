@@ -39,6 +39,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+Poinset_TypeDef frame;
 SysDataTypeDef Receive;
 IMUTypeDef BMI088;
 /* USER CODE END PTD */

@@ -19,6 +19,8 @@ typedef struct
     
 }GimbalTypeDef;
 
+
+
 extern GimbalTypeDef Yaw;
 
 extern GimbalTypeDef Pitch;

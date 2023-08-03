@@ -44,6 +44,20 @@ typedef struct
   uint8_t data_vision[8];
 }SysDataTypeDef;
 
+typedef struct 
+{
+    /* data */
+    struct 
+    {
+        /* data */
+        int16_t X;
+        int16_t Y;
+        
+    }Num[10];
+        
+}Poinset_TypeDef;
+
+extern Poinset_TypeDef frame;
 extern SysDataTypeDef Receive;
 /* USER CODE END ET */
 

@@ -21,7 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "Gimbal.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart2;
@@ -237,5 +237,17 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
+
+void VisionData_Process(uint8_t *rx_Data ,Poinset_TypeDef * coord)
+{
+  uint8_t id;
+  if (rx_Data[0] == 0xAF)
+  {
+      id = rx_Data[1];
+      coord->Num[id].X = ((rx_Data[2]<<8)|rx_Data[3]);
+      coord->Num[id].Y = ((rx_Data[4]<<8)|rx_Data[5]);
+  }
+}
+
 
 /* USER CODE END 1 */

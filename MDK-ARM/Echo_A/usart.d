@@ -33,3 +33,6 @@ echo_a\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 echo_a\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 echo_a\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 echo_a\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+echo_a\usart.o: ../Application/Inc/Gimbal.h
+echo_a\usart.o: ../Middlewares/Peripheral/Motor/Inc/Motor.h
+echo_a\usart.o: ../Application/Inc/PID.h

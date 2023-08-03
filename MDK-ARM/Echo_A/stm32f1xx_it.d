@@ -36,3 +36,6 @@ echo_a\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
 echo_a\stm32f1xx_it.o: ../Inc/can.h
 echo_a\stm32f1xx_it.o: ../Middlewares/Comm/Inc/IMU.h
 echo_a\stm32f1xx_it.o: ../Middlewares/Peripheral/Motor/Inc/Motor.h
+echo_a\stm32f1xx_it.o: ../Application/Inc/Gimbal.h
+echo_a\stm32f1xx_it.o: ../Application/Inc/PID.h
+echo_a\stm32f1xx_it.o: ../Inc/usart.h
