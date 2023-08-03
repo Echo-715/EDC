@@ -30,5 +30,6 @@ void Gimbal_StrPID(GimbalTypeDef *gimbal, MotorTypeDef *M3508,
 
 void Gimbal_CTRL(void);
 void MOD2 (void);
+void MOD3 (void);
 
 #endif
