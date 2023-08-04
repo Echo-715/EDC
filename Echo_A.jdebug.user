@@ -1,24 +1,21 @@
 
-
-GraphedExpression="(Yaw).Position", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#e56a6f
-GraphedExpression="(Pitch).Position", Color=#35792b
-GraphedExpression="(Yaw).Output", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#769dda
-GraphedExpression="(Pitch).Output", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#b14f0d
-OpenDocument="main.c", FilePath="E:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Src/main.c", Line=65
-OpenDocument="startup_stm32f103xb.s", FilePath="e:/.Echo/About Me/Competition/EDC/CODE/Echo_A/MDK-ARM/startup_stm32f103xb.s", Line=120
-OpenDocument="stm32f1xx_hal_uart.c", FilePath="e:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c", Line=1457
-OpenDocument="tasks.c", FilePath="e:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Middlewares/Third_Party/FreeRTOS/Source/tasks.c", Line=3244
-OpenDocument="usart.c", FilePath="e:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Src/usart.c", Line=148
-OpenDocument="stm32f1xx_hal_i2c.c", FilePath="e:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c", Line=7561
-OpenDocument="stm32f1xx_it.c", FilePath="E:/.Echo/About Me/Competition/EDC/CODE/Echo_A/Src/stm32f1xx_it.c", Line=87
+GraphedExpression="((frame).Num[0]).X", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#e56a6f
+GraphedExpression="((frame).Num[0]).Y", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#35792b
+GraphedExpression="(Yaw).Position", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#769dda
+GraphedExpression="(Pitch).Position", Color=#b14f0d
+GraphedExpression="(frame).poin_newY", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#b3c38e
+GraphedExpression="(frame).poin_newX", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#ab7b05
+GraphedExpression="((M3508).ID[0]).Rotor_angle", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#7fd3b7
+GraphedExpression="((M3508).ID[1]).Rotor_angle", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#50328f
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=181, h=234, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Global Data", DockArea=RIGHT, x=0, y=1, w=181, h=496, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Data Sampling", DockArea=LEFT, x=0, y=1, w=1209, h=215, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
-OpenWindow="Timeline", DockArea=LEFT, x=0, y=0, w=1209, h=515, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=0, CodePaneShown=0, PinCursor="Cursor Movable", TimePerDiv="1 s / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="1009;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=0, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="1039;0", CodeGraphLegendShown=0, CodeGraphLegendPosition="1045;0"
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=280, h=304, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=1, w=280, h=620, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Data Sampling", DockArea=LEFT, x=0, y=1, w=1638, h=281, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=LEFT, x=0, y=0, w=1638, h=643, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=0, CodePaneShown=0, PinCursor="Cursor Movable", TimePerDiv="1 s / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="1332;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=0, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="1008;0", CodeGraphLegendShown=0, CodeGraphLegendPosition="1022;0"
 SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
-TableHeader="Global Data", SortCol="Value", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[191;100;100;100;299;100]
-TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";" (Yaw).Position";" (Pitch).Position";" (Yaw).Output";" (Pitch).Output"], ColWidths=[100;100;100;100;100;100]
-TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[202;100;100;112;119;100;100;100;276]
+TableHeader="Global Data", SortCol="Value", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[191;100;100;100;299;280]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";" ((frame).Num[0]).X";" ((frame).Num[0]).Y";" (Yaw).Position";" (Pitch).Position";" (frame).poin_newY";" (frame).poin_newX";" ((M3508).ID[0]).Rotor_angle";" ((M3508).ID[1]).Rotor_angle"], ColWidths=[100;100;100;100;100;100;100;100;100;100]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[202;100;100;126;134;100;100;107;669]
 TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;359]

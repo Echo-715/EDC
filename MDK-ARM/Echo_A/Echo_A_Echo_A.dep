@@ -146,7 +146,7 @@ I (../Middlewares/Peripheral/KEY/Inc/Key.h)(0x64CC07EC)
 I (../Middlewares/Peripheral/OLED/Inc/OLED.h)(0x64CC07EC)
 I (../Inc/i2c.h)(0x64AFF4FE)
 I (../Middlewares/Peripheral/Buzzer/Inc/Buzzer.h)(0x64CC07EC)
-I (../Application/Inc/Gimbal.h)(0x64CCB90A)
+I (../Application/Inc/Gimbal.h)(0x64CCD0B7)
 I (../Middlewares/Peripheral/Motor/Inc/Motor.h)(0x64CC07EC)
 I (../Application/Inc/PID.h)(0x64C9BE16)
 F (../Src/can.c)(0x64CA9639)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc -I ../Middlewares/Peripheral/Motor/Inc -I ../Middlewares/Peripheral/KEY/Inc -I ..\Middlewares\math\inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\can.o --omf_browse echo_a\can.crf --depend echo_a\can.d)
@@ -387,7 +387,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6402F80B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6402F80B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6402F80B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6402F80B)
-I (../Application/Inc/Gimbal.h)(0x64CCB90A)
+I (../Application/Inc/Gimbal.h)(0x64CCD0B7)
 I (../Middlewares/Peripheral/Motor/Inc/Motor.h)(0x64CC07EC)
 I (../Application/Inc/PID.h)(0x64C9BE16)
 F (../Src/stm32f1xx_it.c)(0x64CCA94D)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc -I ../Middlewares/Peripheral/Motor/Inc -I ../Middlewares/Peripheral/KEY/Inc -I ..\Middlewares\math\inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\stm32f1xx_it.o --omf_browse echo_a\stm32f1xx_it.crf --depend echo_a\stm32f1xx_it.d)
@@ -427,7 +427,7 @@ I (../Inc/stm32f1xx_it.h)(0x64CA9044)
 I (../Inc/can.h)(0x64CA96E1)
 I (../Middlewares/Comm/Inc/IMU.h)(0x64CC07EC)
 I (../Middlewares/Peripheral/Motor/Inc/Motor.h)(0x64CC07EC)
-I (../Application/Inc/Gimbal.h)(0x64CCB90A)
+I (../Application/Inc/Gimbal.h)(0x64CCD0B7)
 I (../Application/Inc/PID.h)(0x64C9BE16)
 I (../Inc/usart.h)(0x64CB6035)
 F (../Src/stm32f1xx_hal_msp.c)(0x64AFF4FF)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc -I ../Middlewares/Peripheral/Motor/Inc -I ../Middlewares/Peripheral/KEY/Inc -I ..\Middlewares\math\inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\stm32f1xx_hal_msp.o --omf_browse echo_a\stm32f1xx_hal_msp.crf --depend echo_a\stm32f1xx_hal_msp.d)
@@ -1249,8 +1249,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x64CC07EC)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x64CC07EC)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x64CC07EC)
-F (..\Application\Src\Gimbal.c)(0x64CCB7B0)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc -I ../Middlewares/Peripheral/Motor/Inc -I ../Middlewares/Peripheral/KEY/Inc -I ..\Middlewares\math\inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\gimbal.o --omf_browse echo_a\gimbal.crf --depend echo_a\gimbal.d)
-I (../Application/Inc/Gimbal.h)(0x64CCB90A)
+F (..\Application\Src\Gimbal.c)(0x64CCF9EB)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Application/Inc -I ../Middlewares/Peripheral/OLED/Inc -I ../Middlewares/Peripheral/Buzzer/Inc -I ../Middlewares/Comm/Inc -I ../Middlewares/Peripheral/Motor/Inc -I ../Middlewares/Peripheral/KEY/Inc -I ..\Middlewares\math\inc-I.\RTE\_Echo_A-ID:\Keil_V\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil_V\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o echo_a\gimbal.o --omf_browse echo_a\gimbal.crf --depend echo_a\gimbal.d)
+I (../Application/Inc/Gimbal.h)(0x64CCD0B7)
 I (../Inc/main.h)(0x64CCA939)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6402F80B)
 I (../Inc/stm32f1xx_hal_conf.h)(0x64CA9044)

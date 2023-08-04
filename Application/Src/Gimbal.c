@@ -11,6 +11,7 @@ GimbalTypeDef Pitch;
 uint8_t flag[10];
 uint8_t initcompaly;
 
+
 /*串级PID控制*/
 void Gimbal_StrPID(GimbalTypeDef *gimbal, MotorTypeDef *M3508,
                     PID_parameter_Typedef *speed,
@@ -218,30 +219,20 @@ void MOD3 (void)
 
 void MOD4(void)
 {
-    if (flag[3] == 0)
-    {
-
-        Yaw.Position = Ramp_float(Inital_Yaw-320,Yaw.Position,0.1f);
-        Pitch.Position = Ramp_float (Inital_Pitch+230,Pitch.Position,0.1f);
-        if ((Yaw.Position == Inital_Yaw-320)&&(Pitch.Position == Inital_Pitch+230))
-        {
-            /* code */
-            flag[3] =1;
-        }  
-
-    }
+    /* code */  
+    // static int time;
+    // if ((HAL_GetTick()-time)>5000)
+    // {
+    //     /* code */
+    //     time = HAL_GetTick();
+    //     flag[3]++;
+    // }
     
-    /* code */
-    if (flag[3]==1)
+    if (flag[3]==0)
     {
         /* code */
-        Yaw.Position = Ramp_float(Origin_x+(Yaw_K*(frame.Num[0].X)),Yaw.Position,0.1f);
-        Pitch.Position = Ramp_float (Origin_y-(Pitch_k*(frame.Num[0].Y)),Pitch.Position,0.1f);
-        if ((Yaw.Position == Origin_x-(Yaw_K*(frame.Num[0].X)))&&(Pitch.Position == Origin_y-(Pitch_k*(frame.Num[0].Y))))
-        {
-            /* code */
-            flag[3] =2;
-        }  
+        Yaw.Position = Ramp_float(((1.2*frame.Num[0].X)+2960),Yaw.Position,0.9f);
+        Pitch.Position = Ramp_float(((3520-(1.007*frame.Num[0].Y))),Pitch.Position,0.7f);
     }
 
     Gimbal_StrPID(&Yaw,&M3508,&Yaw_SpeedPID,&Yaw_LocationPID,Yaw.Position,Yaw_motorID);

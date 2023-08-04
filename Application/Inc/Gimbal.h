@@ -11,8 +11,8 @@
 #define Pitch_motorID  1  /*对应电调ID2*/
 #define INITIAL_POSITION   0
 
-#define Inital_Pitch    3275
-#define Inital_Yaw      3270
+#define Inital_Pitch    3265
+#define Inital_Yaw      3265
 #define MOVE_SPEED      0.2f
 #define Yaw_K       1.9 //1.4
 #define Pitch_k     1.07//1.04
