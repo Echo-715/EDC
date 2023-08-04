@@ -87,10 +87,10 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  PID_Init(&Yaw_SpeedPID,70,0.01f,100,10000,50,6000);
-  PID_Init(&Yaw_LocationPID,0.3f,0,0,1000,100,100);
-  PID_Init(&Pitch_SpeedPID,75,0.081f,150,10000,100,100);
-  PID_Init(&Pitch_LocationPID,0.4f,0,0,1000,50,100);
+  PID_Init(&Yaw_SpeedPID,60,0,0,16000,500,6000);
+  PID_Init(&Yaw_LocationPID,0.5f,0,0,500,100,1000);
+  PID_Init(&Pitch_SpeedPID,50,0,0,16000,100,100);
+  PID_Init(&Pitch_LocationPID,0.5f,0,0,500,50,100);
   /* USER CODE END Init */
 
   /* Configure the system clock */

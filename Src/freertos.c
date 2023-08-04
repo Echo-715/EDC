@@ -163,7 +163,7 @@ void UI(void const * argument)
   for(;;)
   {
 		Key_Scan(&Allkey);
-    OLED_ShowString(1,6,"EDC_Car");
+    OLED_ShowString(1,4,"EDC_Gimbal");
     OLED_ShowString(2,1,"MOD:");
     OLED_ShowNum(2,6,Allkey.key1.Flag,1);
     if (Allkey.key2.Flag)

@@ -243,7 +243,7 @@ void USART2_IRQHandler(void)
 		if (__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
 		{
 	
-			uint8_t  Rx_Len = 8 ;// , DMA_Remaining_Quantity = 0;
+			uint8_t  Rx_Len = 20;// , DMA_Remaining_Quantity = 0;
 
 			HAL_UART_DMAStop(&huart2);
 			

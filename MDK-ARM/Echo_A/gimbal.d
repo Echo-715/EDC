@@ -38,3 +38,4 @@ echo_a\gimbal.o: ../Application/Inc/PID.h
 echo_a\gimbal.o: ../Inc/can.h
 echo_a\gimbal.o: ../Middlewares/Peripheral/KEY/Inc/Key.h
 echo_a\gimbal.o: ..\Middlewares\math\inc\Mymath.h
+echo_a\gimbal.o: ../Inc/usart.h

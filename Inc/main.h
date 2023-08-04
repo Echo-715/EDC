@@ -39,9 +39,9 @@ extern "C" {
 typedef struct 
 {
   /* data */
-  uint8_t data_can[8];
-  uint8_t data_usart[8];
-  uint8_t data_vision[8];
+  uint8_t data_can[20];
+  uint8_t data_usart[20];
+  uint8_t data_vision[30];
 }SysDataTypeDef;
 
 typedef struct 
@@ -54,6 +54,8 @@ typedef struct
         int16_t Y;
         
     }Num[20];
+    int16_t poin_newX;
+    int16_t poin_newY;
         
 }Poinset_TypeDef;
 

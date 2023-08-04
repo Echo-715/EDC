@@ -246,6 +246,8 @@ void VisionData_Process(uint8_t *rx_Data ,Poinset_TypeDef * coord)
       id = rx_Data[1];
       coord->Num[id].X = ((rx_Data[2]<<8)|rx_Data[3]);
       coord->Num[id].Y = ((rx_Data[4]<<8)|rx_Data[5]);
+      coord->poin_newX = ((rx_Data[6]<<8)|rx_Data[7]);
+      coord->poin_newY = ((rx_Data[8]<<8)|rx_Data[9]);
   }
 }
 
